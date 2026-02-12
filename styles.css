@@ -49,3 +49,102 @@ body {
     border-radius: 10px;
     margin-top: 20px;
   }
+
+  .share-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #d32f2f;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #f9e3e3;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    border-color: #d32f2f;
+  }
+
+  .generate-button {
+    width: 100%;
+    font-size: 1em;
+    padding: 12px;
+    background-color: #d32f2f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .generate-button:hover {
+    background-color: #b71c1c;
+  }
+
+  .copy-button {
+    font-size: 0.9em;
+    padding: 8px 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .copy-button:hover {
+    background-color: #45a049;
+  }
+
+  #share-link {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9em;
+    word-break: break-all;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .message-display h1:first-of-type {
+    font-size: 1.8em;
+    color: #d32f2f;
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+
+  .message-display h1:last-of-type {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .yes-page {
+    text-align: center;
+  }
+
+  .yes-page .header_text {
+    font-size: 3em;
+    color: #d32f2f;
+    margin-bottom: 30px;
+  }
