@@ -3,25 +3,38 @@ function checkForSharedMessage() {
     const params = new URLSearchParams(window.location.search);
     const encodedMessage = params.get('msg');
 
+    console.log("Checking for message...", { encodedMessage });
+
     if (encodedMessage) {
         try {
             const decodedMessage = atob(encodedMessage);
+            console.log("Decoded message:", decodedMessage);
             const { from, to } = JSON.parse(decodedMessage);
+            console.log("Parsed message:", { from, to });
             displaySharedMessage(from, to);
         } catch (error) {
             console.error("Error decoding message:", error);
         }
+    } else {
+        console.log("No message parameter found in URL");
     }
 }
 
 function displaySharedMessage(from, to) {
+    console.log("Displaying shared message...");
     const shareForm = document.getElementById('share-form');
     const messageDisplay = document.getElementById('message-display');
     const messageText = document.getElementById('message-text');
 
+    if (!shareForm || !messageDisplay || !messageText) {
+        console.error("Required DOM elements not found");
+        return;
+    }
+
     shareForm.style.display = 'none';
     messageDisplay.style.display = 'block';
     messageText.textContent = `Hello ${to}, this is a message from ${from} ❤️`;
+    console.log("Message displayed successfully");
 }
 
 function generateLink() {
@@ -55,6 +68,12 @@ async function copyToClipboard() {
     }
 }
 
+// Initialize on page load
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', checkForSharedMessage);
+} else {
+    checkForSharedMessage();
+}
 
 const messages = [
     "Are you sure?",
